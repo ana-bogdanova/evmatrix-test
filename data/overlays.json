@@ -1,0 +1,13 @@
+[
+  {
+    "id": "example-1",
+    "type": "year_correction",
+    "make": "Kia",
+    "model": "EV6",
+    "region": "US",
+    "powertrain": "BEV",
+    "from": "2025",
+    "to": "2026",
+    "_note": "EXAMPLE — fixes a wrong model year. Delete or edit. 'from' is what the source says, 'to' is the correct value."
+  }
+]

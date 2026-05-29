@@ -1,0 +1,52 @@
+name: EVMatrix — update lists
+
+# Manual trigger only: run from the repo's "Actions" tab via the
+# "Run workflow" button. No schedule, nothing runs on its own.
+on:
+  workflow_dispatch:
+
+# Allow the workflow to commit a branch and open a pull request.
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch fresh data, diff, and regenerate lists
+        id: run
+        run: node scripts/update.js
+
+      - name: Open a pull request with the changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "EVMatrix update ${{ steps.run.outputs.stamp }} (${{ steps.run.outputs.summary }})"
+          branch: "evmatrix/update-${{ steps.run.outputs.stamp }}"
+          delete-branch: true
+          title: "EVMatrix update — ${{ steps.run.outputs.stamp }} (${{ steps.run.outputs.summary }})"
+          body: |
+            Automated EVMatrix update run.
+
+            **Summary:** ${{ steps.run.outputs.summary }} since the last saved version.
+
+            ### What to review
+            - `changes/${{ steps.run.outputs.stamp }}.md` — the human-readable change log for this run.
+            - `lists/*.html` and `lists/*.md` — the regenerated published lists (copy the HTML into the Help Center).
+            - `data/latest.json` — the new saved baseline (the next run diffs against this).
+
+            Merge this PR to make the update official. If something looks wrong
+            (e.g. the source returned unexpected data), close the PR without merging
+            and the saved baseline stays untouched.
+          add-paths: |
+            data/latest.json
+            changes/
+            lists/
