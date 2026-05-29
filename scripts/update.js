@@ -84,10 +84,16 @@ function normaliseApi(records) {
     const end = (a.years && a.years.end) || start;
     const endpoints = {}, controls = {}, codes = {};
     (a.capabilities || []).forEach(c => {
-      if (!c || !c.code) return;
-      endpoints[c.code] = true;
-      codes[c.code] = c.type || "signal";       // remember signal vs command per code
-      if (c.type === "command" && /charge/i.test(c.code)) controls[c.code] = true;
+      if (!c) return;
+      // The API exposes two id-ish fields: `code` is short PascalCase
+      // (e.g. "DetailedChargingStatus") and `capability` is the canonical
+      // lowercased "group-name" form (e.g. "charge-detailedchargingstatus").
+      // We key off `capability`, since that's the stable id our rules use.
+      const id = c.capability || c.code;
+      if (!id) return;
+      endpoints[id] = true;
+      codes[id] = c.type || "signal";       // remember signal vs command per id
+      if (c.type === "command" && /charge/i.test(id)) controls[id] = true;
     });
     out.push({ make: norm(a.make), model: norm(a.model), yStart: start || null,
                year: end || null, region, powertrain, endpoints, controls, codes });
@@ -109,11 +115,11 @@ function matchTarget(ov, g) {
 
    Required tracking set — ALL of these must be present for the vehicle to
    appear on ANY list:
-     - EV battery capacity   -> tractionbattery-nominalcapacity
+     - EV battery capacity   -> tractionbattery-nominalcapacity OR
+                                  tractionbattery-range (Tesla and some others
+                                  expose range but not nominal capacity)
      - EV battery (SOC)       -> tractionbattery-stateofcharge
-     - EV charging status     -> ANY of: charge-ischarging,
-                                  charge-detailedchargingstatus,
-                                  charge-ischargingcableconnected
+     - EV charging status     -> charge-detailedchargingstatus
      - Location               -> location-preciselocation
      - Odometer               -> odometer-traveleddistance
 
@@ -124,9 +130,9 @@ function matchTarget(ov, g) {
    A blocklist overlay forces TRACKING even if start/stop are present.
    ------------------------------------------------------------------------- */
 const REQUIRED_TRACKING = [
-  ["tractionbattery-nominalcapacity", "tractionbattery-range"],                 // battery capacity
+  ["tractionbattery-nominalcapacity", "tractionbattery-range"], // battery capacity (nominal capacity OR range)
   ["tractionbattery-stateofcharge"],                   // battery (SOC)
-  ["charge-detailedchargingstatus"], // charging status (any one)
+  ["charge-detailedchargingstatus"],                   // charging status
   ["location-preciselocation"],                        // location
   ["odometer-traveleddistance"],                       // odometer
 ];
