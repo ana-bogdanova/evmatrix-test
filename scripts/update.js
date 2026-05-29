@@ -306,21 +306,21 @@ function listRows(groups, region, classification) {
     .filter(g => g.region === region && g.classification === classification)
     .sort((a, b) => a.make.localeCompare(b.make) || a.model.localeCompare(b.model))
     .map(g => ({ make: g.make, model: g.model + (yearRange(g.years) ? " " + yearRange(g.years) : ""),
-                 type: classification === "MANAGED" ? "Managed" : "Tracking Only" }));
+                 powertrain: g.powertrain }));   // BEV / PHEV
 }
-function listHTML(title, recs) {
-  return `<!-- ${title} — ${recs.length} rows -->
+function listHTML(title, recs, dateStr) {
+  return `<!-- ${title} (${recs.length}) — created on ${dateStr} -->
 <table>
-  <thead><tr><th>Make</th><th>Model</th><th>Type</th></tr></thead>
+  <thead><tr><th>Make</th><th>Model</th><th>Powertrain</th></tr></thead>
   <tbody>
-${recs.map(r => `    <tr><td>${esc(r.make)}</td><td>${esc(r.model)}</td><td>${esc(r.type)}</td></tr>`).join("\n")}
+${recs.map(r => `    <tr><td>${esc(r.make)}</td><td>${esc(r.model)}</td><td>${esc(r.powertrain)}</td></tr>`).join("\n")}
   </tbody>
 </table>
 `;
 }
-function listMD(title, recs) {
-  return `# ${title} (${recs.length})\n\n| Make | Model | Type |\n|---|---|---|\n` +
-    recs.map(r => `| ${r.make} | ${r.model} | ${r.type} |`).join("\n") + "\n";
+function listMD(title, recs, dateStr) {
+  return `# ${title} (${recs.length}) - created on ${dateStr}\n\n| Make | Model | Powertrain |\n|---|---|---|\n` +
+    recs.map(r => `| ${r.make} | ${r.model} | ${r.powertrain} |`).join("\n") + "\n";
 }
 
 /* ---------------------------------------------------------------- main */
@@ -349,12 +349,13 @@ async function main() {
     ["CA_TRACKING", "CA", "TRACKING", "CA · Tracking Only"],
   ];
   const counts = {};
+  const dateStr = when.toISOString().slice(0, 10);   // UTC YYYY-MM-DD
   defs.forEach(([id, region, classification, title]) => {
     const recs = listRows(groups, region, classification);
     counts[id] = recs.length;
     const base = id.toLowerCase().replace("_", "-");
-    fs.writeFileSync(path.join(LISTS_DIR, base + ".html"), listHTML(title, recs));
-    fs.writeFileSync(path.join(LISTS_DIR, base + ".md"), listMD(title, recs));
+    fs.writeFileSync(path.join(LISTS_DIR, base + ".html"), listHTML(title, recs, dateStr));
+    fs.writeFileSync(path.join(LISTS_DIR, base + ".md"), listMD(title, recs, dateStr));
   });
 
   // timestamped change log (always written, even "no changes", so runs are auditable)
