@@ -124,7 +124,7 @@ function matchTarget(ov, g) {
    A blocklist overlay forces TRACKING even if start/stop are present.
    ------------------------------------------------------------------------- */
 const REQUIRED_TRACKING = [
-  ["tractionbattery-nominalcapacity"],                 // battery capacity
+  ["tractionbattery-nominalcapacity", "tractionbattery-range"],                 // battery capacity
   ["tractionbattery-stateofcharge"],                   // battery (SOC)
   ["charge-ischarging"], // charging status (any one)
   ["location-preciselocation"],                        // location
