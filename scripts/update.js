@@ -126,7 +126,7 @@ function matchTarget(ov, g) {
 const REQUIRED_TRACKING = [
   ["tractionbattery-nominalcapacity", "tractionbattery-range"],                 // battery capacity
   ["tractionbattery-stateofcharge"],                   // battery (SOC)
-  ["charge-ischarging"], // charging status (any one)
+  ["charge-detailedchargingstatus"], // charging status (any one)
   ["location-preciselocation"],                        // location
   ["odometer-traveleddistance"],                       // odometer
 ];
