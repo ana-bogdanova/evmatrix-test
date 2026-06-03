@@ -61,7 +61,6 @@ US,Managed,Kia,Niro 2018–2025,PHEV
 US,Managed,Kia,Sorento 2022–2026,PHEV
 US,Managed,Kia,Sportage 2023–2026,PHEV
 US,Managed,Land Rover,Discovery Sport 2020–2025,PHEV
-US,Managed,Land Rover,Range Rover 2023–2026,PHEV
 US,Managed,Lexus,RZ 2023–2026,BEV
 US,Managed,Lexus,RZ 450e 2023–2026,BEV
 US,Managed,Lexus,NX 450h 2022–2026,PHEV
@@ -105,7 +104,6 @@ CA,Managed,Chevrolet,Equinox 2024–2026,BEV
 CA,Managed,Chevrolet,Silverado 2024–2026,BEV
 CA,Managed,Fiat,500e 2024–2025,BEV
 CA,Managed,Hyundai,IONIQ 5 2022–2026,BEV
-CA,Managed,Hyundai,IONIQ 6 2023–2025,BEV
 CA,Managed,Hyundai,Kona 2019–2026,BEV
 CA,Managed,Jaguar,I-PACE 2019–2023,BEV
 CA,Managed,Jeep,Wrangler 2024,PHEV
@@ -183,7 +181,6 @@ US,Tracking Only,Mercedes-Benz,GLC-Class 2025–2026,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 400 2025,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 450 2024–2026,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 53 2025,PHEV
-US,Tracking Only,Mercedes-Benz,GLS 450 2025,PHEV
 US,Tracking Only,Mercedes-Benz,S 580 2024–2025,PHEV
 US,Tracking Only,MINI,Cooper 2018–2024,BEV
 US,Tracking Only,MINI,Cooper ALL4 2022,BEV

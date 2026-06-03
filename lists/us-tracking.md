@@ -1,4 +1,4 @@
-# US · Tracking Only (88) - created on 2026-06-03
+# US · Tracking Only (87) - created on 2026-06-03
 
 | Make | Model | Powertrain |
 |---|---|---|
@@ -64,7 +64,6 @@
 | Mercedes-Benz | GLE 400 2025 | PHEV |
 | Mercedes-Benz | GLE 450 2024–2026 | PHEV |
 | Mercedes-Benz | GLE 53 2025 | PHEV |
-| Mercedes-Benz | GLS 450 2025 | PHEV |
 | Mercedes-Benz | S 580 2024–2025 | PHEV |
 | MINI | Cooper 2018–2024 | BEV |
 | MINI | Cooper ALL4 2022 | BEV |

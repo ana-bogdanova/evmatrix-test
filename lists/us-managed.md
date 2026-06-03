@@ -1,4 +1,4 @@
-# US · Managed (96) - created on 2026-06-03
+# US · Managed (95) - created on 2026-06-03
 
 | Make | Model | Powertrain |
 |---|---|---|
@@ -64,7 +64,6 @@
 | Kia | Sorento 2022–2026 | PHEV |
 | Kia | Sportage 2023–2026 | PHEV |
 | Land Rover | Discovery Sport 2020–2025 | PHEV |
-| Land Rover | Range Rover 2023–2026 | PHEV |
 | Lexus | RZ 2023–2026 | BEV |
 | Lexus | RZ 450e 2023–2026 | BEV |
 | Lexus | NX 450h 2022–2026 | PHEV |

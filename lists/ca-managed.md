@@ -1,4 +1,4 @@
-# CA · Managed (26) - created on 2026-06-03
+# CA · Managed (25) - created on 2026-06-03
 
 | Make | Model | Powertrain |
 |---|---|---|
@@ -12,7 +12,6 @@
 | Chevrolet | Silverado 2024–2026 | BEV |
 | Fiat | 500e 2024–2025 | BEV |
 | Hyundai | IONIQ 5 2022–2026 | BEV |
-| Hyundai | IONIQ 6 2023–2025 | BEV |
 | Hyundai | Kona 2019–2026 | BEV |
 | Jaguar | I-PACE 2019–2023 | BEV |
 | Jeep | Wrangler 2024 | PHEV |
