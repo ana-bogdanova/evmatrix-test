@@ -20,6 +20,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR    = path.join(ROOT, "data");
 const CHANGES_DIR = path.join(ROOT, "changes");
 const LISTS_DIR   = path.join(ROOT, "lists");
+const DOCS_DIR    = path.join(ROOT, "docs");   // GitHub Pages publish folder
 const LATEST      = path.join(DATA_DIR, "latest.json");
 const OVERLAYS    = path.join(DATA_DIR, "overlays.json");
 
@@ -35,7 +36,7 @@ function readJSON(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, "utf8")); }
   catch { return fallback; }
 }
-function ensureDirs() { [DATA_DIR, CHANGES_DIR, LISTS_DIR].forEach(d => fs.mkdirSync(d, { recursive: true })); }
+function ensureDirs() { [DATA_DIR, CHANGES_DIR, LISTS_DIR, DOCS_DIR].forEach(d => fs.mkdirSync(d, { recursive: true })); }
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
 }
@@ -418,6 +419,83 @@ function buildExportCsv(allRows) {
   return lines.join("\n") + "\n";
 }
 
+/* ---------------------------------------------------------------- public page
+   A single self-contained HTML page (no external JS) for GitHub Pages.
+   All four lists baked in, responsive for any iframe width. Regenerated each
+   run and committed to /docs; Pages serves it so the public URL auto-updates. */
+function pageTable(recs) {
+  if (!recs.length) return `<p class="empty">No vehicles in this list.</p>`;
+  return `<table>
+<thead><tr><th>Make</th><th>Model</th><th>Powertrain</th></tr></thead>
+<tbody>
+${recs.map(r => `<tr><td>${esc(r.make)}</td><td>${esc(r.model)}</td><td><span class="pt ${esc(r.powertrain).toLowerCase()}">${esc(r.powertrain)}</span></td></tr>`).join("\n")}
+</tbody>
+</table>`;
+}
+function buildPublicPage(sections, dateStr) {
+  // sections: [{title, region, kind, recs}]
+  const block = s => `<section>
+<h2><span class="rg ${s.region === "CA" ? "ca" : "us"}">${s.region}</span> ${esc(s.kind)} <span class="cnt">${s.recs.length}</span></h2>
+${pageTable(s.recs)}
+</section>`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Compatibility — Supported Models (US & CA)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f8f6; --card:#fff; --ink:#161a18; --soft:#5a615e; --faint:#9aa19d;
+    --line:#e2e6e1; --line-strong:#cfd5cf; --managed:#0c6b58; --tracking:#4b5563;
+    --bev:#0c6b58; --bev-bg:#e4f1ec; --phev:#9a6312; --phev-bg:#fbf1de;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:15px;line-height:1.5;padding:24px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{margin-bottom:8px}
+  h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+  .updated{color:var(--soft);font-size:13px}
+  .updated b{font-family:var(--mono);font-weight:500;color:var(--ink)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:18px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(20,26,24,.04),0 10px 26px -20px rgba(20,26,24,.3)}
+  h2{font-size:15px;margin:0;padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;background:rgba(0,0,0,.012)}
+  .rg{font:600 11px/1 var(--mono);letter-spacing:.04em;padding:4px 7px;border-radius:6px;color:#fff;background:var(--ink)}
+  .rg.ca{background:#9a2235}
+  .cnt{margin-left:auto;font:500 12px/1 var(--mono);color:var(--faint)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);font-weight:600;
+    padding:10px 18px;border-bottom:1px solid var(--line-strong)}
+  td{padding:9px 18px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:0}
+  tbody tr:nth-child(even){background:rgba(12,107,88,.022)}
+  .pt{font:500 11px/1 var(--mono);padding:3px 7px;border-radius:5px}
+  .pt.bev{color:var(--bev);background:var(--bev-bg)}
+  .pt.phev{color:var(--phev);background:var(--phev-bg)}
+  .empty{padding:18px;color:var(--faint);font-size:13px;margin:0}
+  footer{margin-top:22px;color:var(--faint);font-size:12px;text-align:center}
+  @media(max-width:520px){body{padding:14px}th,td{padding:8px 12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>EV Compatibility — Supported Models</h1>
+  <div class="updated">United States &amp; Canada · last updated <b>${dateStr}</b></div>
+</header>
+${sections.map(block).join("\n")}
+<footer>Updated automatically. Managed = remote charge control supported; Tracking Only = monitoring only.</footer>
+</div>
+</body>
+</html>
+`;
+}
+
 /* ---------------------------------------------------------------- main */
 async function main() {
   ensureDirs();
@@ -446,6 +524,7 @@ async function main() {
   const counts = {};
   const dateStr = when.toISOString().slice(0, 10);   // UTC YYYY-MM-DD
   const exportRows = [];
+  const pageSections = [];
   defs.forEach(([id, region, classification, title]) => {
     const recs = listRows(groups, region, classification);
     counts[id] = recs.length;
@@ -453,11 +532,15 @@ async function main() {
     fs.writeFileSync(path.join(LISTS_DIR, base + ".md"), listMD(title, recs, dateStr));
     const typeLabel = classification === "MANAGED" ? "Managed" : "Tracking Only";
     recs.forEach(r => exportRows.push({ region, type: typeLabel, make: r.make, model: r.model, powertrain: r.powertrain }));
+    pageSections.push({ title, region, kind: typeLabel, recs });
   });
 
   // single combined CSV for easy one-click download; date in the filename
   const csvName = `evmatrix-export-${dateStr}.csv`;
   fs.writeFileSync(path.join(LISTS_DIR, csvName), buildExportCsv(exportRows));
+
+  // public GitHub Pages page (all four lists, baked in); served at a stable URL
+  fs.writeFileSync(path.join(DOCS_DIR, "index.html"), buildPublicPage(pageSections, dateStr));
 
   // timestamped change log (always written, even "no changes", so runs are auditable)
   const changesFile = path.join(CHANGES_DIR, `${stamp(when)}.md`);
