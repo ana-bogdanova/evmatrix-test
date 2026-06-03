@@ -255,6 +255,19 @@ function bySortKey(a, b) {
       || a.model.localeCompare(b.model);
 }
 
+// The only endpoints that matter for classification. "Changed" lines report
+// gained/lost strictly within this set; changes to anything else are ignored.
+const RELEVANT_ENDPOINTS = new Set([
+  "tractionbattery-nominalcapacity",
+  "tractionbattery-range",
+  "tractionbattery-stateofcharge",
+  "charge-detailedchargingstatus",
+  "location-preciselocation",
+  "odometer-traveleddistance",
+  "charge-start",
+  "charge-stop",
+]);
+
 /* ---------------------------------------------------------------- diff
    Three buckets: add (new model), change (existing model: years and/or
    capabilities moved), remove (gone). A "change" carries the specific deltas. */
@@ -268,10 +281,13 @@ function diff(curSnap, baseSnap) {
     if (cy !== by) deltas.push({ kind: "years", was: yearRange(b.years), now: yearRange(c.years) });
     if ((c.sig || "") !== (b.sig || "")) {
       const before = new Set(b.caps || []), after = new Set(c.caps || []);
-      const gained = [...after].filter(x => !before.has(x)).sort();
-      const lost = [...before].filter(x => !after.has(x)).sort();
-      deltas.push({ kind: "caps", gained, lost,
-                    flip: b.classification !== c.classification ? { from: b.classification, to: c.classification } : null });
+      const gained = [...after].filter(x => !before.has(x) && RELEVANT_ENDPOINTS.has(x)).sort();
+      const lost = [...before].filter(x => !after.has(x) && RELEVANT_ENDPOINTS.has(x)).sort();
+      // only a meaningful change if a RELEVANT endpoint moved
+      if (gained.length || lost.length) {
+        deltas.push({ kind: "caps", gained, lost,
+                      flip: b.classification !== c.classification ? { from: b.classification, to: c.classification } : null });
+      }
     }
     if (deltas.length) changes.push({ type: "change", g: c, b, deltas });
   }
@@ -339,21 +355,26 @@ function renderChangesMd(changes, when, counts, staleOverlays) {
   return lines.join("\n");
 }
 
-// PR description body: self-sufficient checklist with full detail + CSV link.
+// PR description body: self-sufficient checklist with full detail + links.
 function renderPrBody(changes, when, counts, csvName) {
   const byType = t => changes.filter(c => c.type === t);
   const L = [];
   const branch = `evmatrix/update-${stampForBranch(when)}`;
-  L.push(`### 📥 Download`, "",
-    `[\`${csvName}\`](../blob/${branch}/lists/${csvName}) — combined CSV for this run (open, then **Raw → Save As**).`, "");
+  const link = (file, text) => `[${text}](../blob/${branch}/${file})`;
+  L.push(`### 📌 All Supported Models US and CA`, "",
+    link(`lists/us-managed.md`, "US · Managed") + " · " +
+    link(`lists/us-tracking.md`, "US · Tracking Only") + " · " +
+    link(`lists/ca-managed.md`, "CA · Managed") + " · " +
+    link(`lists/ca-tracking.md`, "CA · Tracking Only"), "",
+    link(`lists/${csvName}`, `\`${csvName}\``) + " — combined CSV for this run (open, then **Raw → Save As**).", "");
   if (!changes.length) {
     L.push(`### No changes`, "", "The current data matches the last saved version. Nothing to verify.", "");
   } else {
     L.push(`### Review checklist — ${changes.length} change${changes.length > 1 ? "s" : ""}`, "",
-      "Tick each item as you confirm it. GitHub saves your checkmarks on this PR.", "");
+      "Tick each item as you confirm it. Checked boxes do not affect the linked PR", "");
     const sec = (title, arr) => {
       if (!arr.length) return;
-      L.push(`#### ${title} (${arr.length})`);
+      L.push(`## ${title} (${arr.length})`);
       arr.forEach(c => L.push(`- [ ] ${changeLine(c)}`));
       L.push("");
     };
