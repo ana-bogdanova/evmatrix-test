@@ -7,7 +7,8 @@ This repo helps to update the EV compatibility list based on data provided by Sm
 Run this task once a month.
 
 1. To start, navigate to **Actions** → select the **EVMatrix — update lists** workflow → on the right side of the table click **Run workflow**, then the **Run workflow** button again. Once complete, you'll see a green checkmark.
-<img width="1440" height="517" alt="Screenshot 2026-06-03 at 4 16 01 PM" src="https://github.com/user-attachments/assets/dfdb3a2e-a41b-4c3f-a46a-90508b1f6c5f" />
+<img width="144" height="51" alt="Screenshot 2026-06-03 at 4 16 01 PM" src="https://github.com/user-attachments/assets/dfdb3a2e-a41b-4c3f-a46a-90508b1f6c5f" />
+
 2. Navigate to the **Pull requests** section. A new pull request appears — click on it.
 3. Review the details of the request. If you agree with all the changes, scroll down, click **Merge pull request**, and **Confirm merge** (commit to `main`).
 4. Once that is done, the updated version of the table will be available at **[URL to add later]**.
