@@ -41,3 +41,4 @@ jobs:
             data/latest.json
             changes/
             lists/
+            docs/
