@@ -1,13 +1,17 @@
 [
-  {
-    "id": "example-1",
-    "type": "year_correction",
-    "make": "Kia",
-    "model": "EV6",
-    "region": "US",
-    "powertrain": "BEV",
-    "from": "2025",
-    "to": "2026",
-    "_note": "EXAMPLE — fixes a wrong model year. Delete or edit. 'from' is what the source says, 'to' is the correct value."
-  }
+  { "id": "exclude-bmw",   "type": "exclude", "make": "BMW" },
+  { "id": "exclude-honda", "type": "exclude", "make": "Honda" },
+  { "id": "exclude-acura", "type": "exclude", "make": "Acura" },
+  { "id": "exclude-mini",  "type": "exclude", "make": "MINI" },
+
+  { "id": "exclude-nissan-leaf",    "type": "exclude", "make": "Nissan",        "model": "Leaf" },
+  { "id": "exclude-mazda-cx60",     "type": "exclude", "make": "Mazda",         "model": "CX-60" },
+  { "id": "exclude-vw-tiguan-phev", "type": "exclude", "make": "Volkswagen",    "model": "Tiguan", "powertrain": "PHEV" },
+  { "id": "exclude-mercedes-eq",    "type": "exclude", "make": "Mercedes-Benz", "modelPrefix": "EQ" },
+
+  { "id": "tracking-ford",      "type": "blocklist", "make": "Ford" },
+  { "id": "tracking-chevrolet", "type": "blocklist", "make": "Chevrolet" },
+  { "id": "tracking-gmc",       "type": "blocklist", "make": "GMC" },
+  { "id": "tracking-buick",     "type": "blocklist", "make": "Buick" },
+  { "id": "tracking-cadillac",  "type": "blocklist", "make": "Cadillac" }
 ]
