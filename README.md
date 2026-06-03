@@ -24,7 +24,8 @@ That's it. Everything lives in the repo, and Git history is your audit trail.
 | `data/overlays.json` | **Your corrections.** You edit this (see below). |
 | `data/latest.json` | The last saved snapshot. Created automatically; don't edit by hand. |
 | `changes/` | One timestamped change log per run, e.g. `changes/2026-05-29-143055.md`. These accumulate — your monthly history lives here. |
-| `lists/` | The four regenerated lists as `.html` (paste into the Help Center) and `.md`. |
+| `lists/` | The four regenerated lists as `.md`, plus a combined dated `evmatrix-export-<date>.csv`. |
+| `docs/index.html` | The public web page (all four lists). Served by GitHub Pages at a stable URL; regenerated each run. |
 
 ---
 
@@ -126,18 +127,46 @@ Because every run commits its snapshot, GitHub's own commit/PR diff view *also* 
 
 ## Publishing the lists
 
-After merging a PR, open `lists/us-managed.html` (or `ca-managed`, `us-tracking`, `ca-tracking`), click **Raw** or **Copy raw contents**, and paste into the Help Center article. The `.md` versions are there if you prefer Markdown tables.
+You have three ways to use the output, in increasing order of "hands-off":
+
+**1. Read / download from the repo.** Open any `lists/*.md` (renders as a table on GitHub), or `lists/evmatrix-export-<date>.csv` → **Raw → Save As** for Excel/Sheets.
+
+**2. The public page (recommended for the Help Center).** Each run regenerates `docs/index.html` — a clean, public web page showing all four lists with the last-updated date. Published via GitHub Pages, it lives at a **stable URL** and updates itself every time you merge a PR. No copy-paste per cycle.
+
+**3. Embed it in your Help Center article.** Put the public URL in an `<iframe>` in the article once; it then reflects every future update automatically.
+
+### One-time GitHub Pages setup
+
+1. Make sure at least one run has merged (so `docs/index.html` exists on `main`).
+2. Repo **Settings → Pages**.
+3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+4. Set branch to **main** and folder to **/docs**, then **Save**.
+5. Wait ~1 minute, refresh — the page URL appears at the top, like
+   `https://ana-bogdanova.github.io/evmatrix-test/`.
+
+> **Note:** A GitHub Pages site is **publicly accessible on the internet** even though the repo stays private. That's intended here — these lists are meant to be public (clients may even embed them). Only `docs/index.html` is published; the rest of the repo (script, overlays, history) is not.
+
+### Embed in the Help Center article
+
+In the article editor, add an embed/iframe and use:
+
+```html
+<iframe src="https://ana-bogdanova.github.io/evmatrix-test/"
+        style="width:100%;border:0;height:1400px" title="EV Compatibility"></iframe>
+```
+
+Adjust `height` to suit. After this, every merged update changes what the iframe shows — no further edits to the article. (Clients can embed the same URL on their own sites the same way.)
 
 ---
 
 ## Notes & limits
 
 - **Manual trigger only.** Nothing runs on its own. (A monthly auto-run can be added later if you ever want it.)
-- **Classification rule.** A vehicle must first be a BEV or PHEV in US or CA (Europe and ICE are filtered out). Then it must expose the full **tracking set** — battery capacity, battery state-of-charge, charging status, location, and odometer — to appear on any list. Of those:
+- **Classification rule.** A vehicle must first be a BEV or PHEV in US or CA (Europe and ICE are filtered out). Then it must expose the full **tracking set** — battery capacity (nominal capacity *or* range), battery state-of-charge, detailed charging status, location, and odometer — to appear on any list. Of those:
   - **Managed** (control-eligible) — has the full tracking set **and** both the *start charge* and *stop charge* commands.
   - **Tracking Only** — has the full tracking set but is missing start and/or stop.
   - A vehicle missing any tracking endpoint is excluded entirely.
 
-  This lives in `classifyVehicle()` in `scripts/update.js`, with the exact capability codes listed in a comment above it. In a private repo it's visible only to people with repo access. (One judgment call to be aware of: "charging status" is treated as satisfied if **any** of the charge-status signals is present — `charge-ischarging`, `charge-detailedchargingstatus`, or `charge-ischargingcableconnected`. Tighten it in that function if you need a specific one.)
+  This lives in `classifyVehicle()` in `scripts/update.js`, with the exact capability codes in `RELEVANT_ENDPOINTS` just above it. In a private repo it's visible only to people with repo access.
 - **Regions/powertrains.** Hardcoded to keep US + CA and BEV + PHEV; Europe and ICE are filtered out. Change `regionsKept` / `powertrainsKept` near the top of `scripts/update.js` if that ever needs to shift.
 - **No secrets or tokens needed.** The workflow uses GitHub's built-in permission to open the PR; the data API needs no key.
