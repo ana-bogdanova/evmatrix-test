@@ -39,6 +39,7 @@ jobs:
           body-path: .pr-body.md
           add-paths: |
             data/latest.json
+            data/overlays.csv
             changes/
             lists/
             docs/
