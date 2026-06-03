@@ -1,4 +1,4 @@
-# US · Tracking Only (88) - created on 2026-06-03
+# US · Tracking Only (76) - created on 2026-06-03
 
 | Make | Model | Powertrain |
 |---|---|---|
@@ -9,31 +9,29 @@
 | Audi | A7 2021 | PHEV |
 | Audi | A8 2020 | PHEV |
 | Audi | SQ8 2024 | PHEV |
-| BMW | i3 2016–2021 | BEV |
-| BMW | i8 2017–2019 | BEV |
-| BMW | 330e 2017–2024 | PHEV |
-| BMW | 430 2021–2022 | PHEV |
-| BMW | 530 2017–2023 | PHEV |
-| BMW | 530e 2019–2023 | PHEV |
-| BMW | 540 2021 | PHEV |
-| BMW | 550 2026 | PHEV |
-| BMW | 740 2019 | PHEV |
-| BMW | i3 2016–2020 | PHEV |
-| BMW | X3 2020–2023 | PHEV |
-| BMW | X3 xDrive30e 2020–2021 | PHEV |
-| BMW | X5 xDrive45e 2021–2023 | PHEV |
-| BMW | Z4 2024 | PHEV |
+| Cadillac | Escalade IQ 2025–2026 | BEV |
 | Cadillac | Escalade IQL 2026 | BEV |
+| Cadillac | Lyriq 2023–2026 | BEV |
+| Cadillac | Optiq 2025–2026 | BEV |
 | Cadillac | Vistiq 2026 | BEV |
+| Chevrolet | Blazer 2024–2026 | BEV |
+| Chevrolet | Bolt 2017–2027 | BEV |
+| Chevrolet | Bolt EUV 2022–2023 | BEV |
+| Chevrolet | Equinox 2024–2026 | BEV |
+| Chevrolet | Silverado 2024–2026 | BEV |
+| Chevrolet | Spark 2015–2022 | BEV |
 | Chevrolet | Volt 2015–2019 | PHEV |
 | Dodge | Charger 2024–2026 | BEV |
 | Dodge | Charger 2024–2026 | PHEV |
+| Ford | F-150 Lightning 2022–2025 | BEV |
 | Ford | Focus 2017 | BEV |
 | Ford | Mustang 2021–2025 | BEV |
 | Ford | Mustang Mach-E 2021–2026 | BEV |
 | Ford | Transit 2022–2023 | BEV |
 | Ford | Escape 2020–2026 | PHEV |
 | Ford | Fusion 2016–2020 | PHEV |
+| GMC | HUMMER 2022–2026 | BEV |
+| GMC | Sierra 2024–2026 | BEV |
 | Hyundai | Genesis 2023–2025 | BEV |
 | Hyundai | Getz 2024–2025 | BEV |
 | Hyundai | Tucson 2024 | BEV |
@@ -47,16 +45,12 @@
 | Lincoln | Aviator 2020–2023 | PHEV |
 | Lincoln | Corsair 2022–2025 | PHEV |
 | Mercedes-Benz | CLA 350 2026 | BEV |
-| Mercedes-Benz | EQA 2022–2024 | BEV |
-| Mercedes-Benz | EQB 2022–2026 | BEV |
-| Mercedes-Benz | EQC 400 2020 | BEV |
-| Mercedes-Benz | EQE 2022–2026 | BEV |
-| Mercedes-Benz | EQS 2020–2026 | BEV |
 | Mercedes-Benz | eSprinter 2024–2025 | BEV |
 | Mercedes-Benz | G 580 2025 | BEV |
 | Mercedes-Benz | C 63 2025 | PHEV |
 | Mercedes-Benz | CLA 35 2026 | PHEV |
 | Mercedes-Benz | E 350 2025 | PHEV |
+| Mercedes-Benz | E 450 2025 | PHEV |
 | Mercedes-Benz | E 53 2019–2026 | PHEV |
 | Mercedes-Benz | GLC 350 2018–2026 | PHEV |
 | Mercedes-Benz | GLC 63 2025–2026 | PHEV |
@@ -64,13 +58,7 @@
 | Mercedes-Benz | GLE 400 2025 | PHEV |
 | Mercedes-Benz | GLE 450 2024–2026 | PHEV |
 | Mercedes-Benz | GLE 53 2025 | PHEV |
-| Mercedes-Benz | GLS 450 2025 | PHEV |
 | Mercedes-Benz | S 580 2024–2025 | PHEV |
-| MINI | Cooper 2018–2024 | BEV |
-| MINI | Cooper ALL4 2022 | BEV |
-| MINI | Cooper 2024 | PHEV |
-| MINI | Cooper ALL4 2023 | PHEV |
-| MINI | Cooper S E ALL4 2019 | PHEV |
 | Nissan | Ariya 2023–2025 | BEV |
 | Polestar | 4 2025–2026 | BEV |
 | Porsche | Macan 2024–2026 | BEV |

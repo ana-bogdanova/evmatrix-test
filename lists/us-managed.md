@@ -1,8 +1,7 @@
-# US · Managed (96) - created on 2026-06-03
+# US · Managed (68) - created on 2026-06-03
 
 | Make | Model | Powertrain |
 |---|---|---|
-| Acura | ZDX 2024 | BEV |
 | Alfa Romeo | Tonale 2024–2025 | PHEV |
 | Audi | e-tron 2019–2025 | BEV |
 | Audi | e-tron GT 2022–2025 | BEV |
@@ -15,35 +14,9 @@
 | Audi | SQ6 e-tron 2025 | BEV |
 | Audi | SQ8 e-tron 2024 | BEV |
 | Audi | Q5 2020–2025 | PHEV |
-| BMW | i4 2022–2026 | BEV |
-| BMW | i5 2023–2026 | BEV |
-| BMW | i7 2022–2026 | BEV |
-| BMW | iX 2021–2026 | BEV |
-| BMW | 330 2016–2025 | PHEV |
-| BMW | 750 2025–2026 | PHEV |
-| BMW | i4 2022–2026 | PHEV |
-| BMW | i5 2024–2026 | PHEV |
-| BMW | iX 2022–2026 | PHEV |
-| BMW | X5 2016–2026 | PHEV |
-| BMW | X5 xDrive50e 2024–2026 | PHEV |
-| BMW | XM 2023–2025 | PHEV |
-| BMW | XM Label 2026 | PHEV |
-| Cadillac | Escalade IQ 2025–2026 | BEV |
-| Cadillac | Lyriq 2023–2026 | BEV |
-| Cadillac | Optiq 2025–2026 | BEV |
-| Chevrolet | Blazer 2024–2026 | BEV |
-| Chevrolet | Bolt 2017–2027 | BEV |
-| Chevrolet | Bolt EUV 2022–2023 | BEV |
-| Chevrolet | Equinox 2024–2026 | BEV |
-| Chevrolet | Silverado 2024–2026 | BEV |
-| Chevrolet | Spark 2015–2022 | BEV |
 | Chrysler | Pacifica 2018–2025 | PHEV |
 | Dodge | Hornet 2024–2025 | PHEV |
 | Fiat | 500e 2014–2024 | BEV |
-| Ford | F-150 Lightning 2022–2025 | BEV |
-| GMC | HUMMER 2022–2026 | BEV |
-| GMC | Sierra 2024–2026 | BEV |
-| Honda | Prologue 2024–2026 | BEV |
 | Hyundai | IONIQ 2017–2022 | BEV |
 | Hyundai | IONIQ 5 2022–2026 | BEV |
 | Hyundai | IONIQ 5 N 2024–2025 | BEV |
@@ -74,7 +47,6 @@
 | Lexus | TX 550h+ 2024–2026 | PHEV |
 | Mazda | CX-70 2025–2026 | PHEV |
 | Mazda | CX-90 2024–2026 | PHEV |
-| MINI | Countryman 2024–2026 | BEV |
 | Polestar | 2 2021–2025 | BEV |
 | Polestar | 3 2025 | BEV |
 | Porsche | Macan 4 2024–2026 | BEV |
