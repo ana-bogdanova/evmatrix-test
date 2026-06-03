@@ -1,5 +1,4 @@
 Region,Type,Make,Model,Powertrain
-US,Managed,Acura,ZDX 2024,BEV
 US,Managed,Alfa Romeo,Tonale 2024–2025,PHEV
 US,Managed,Audi,e-tron 2019–2025,BEV
 US,Managed,Audi,e-tron GT 2022–2025,BEV
@@ -12,35 +11,9 @@ US,Managed,Audi,S6 e-tron 2025,BEV
 US,Managed,Audi,SQ6 e-tron 2025,BEV
 US,Managed,Audi,SQ8 e-tron 2024,BEV
 US,Managed,Audi,Q5 2020–2025,PHEV
-US,Managed,BMW,i4 2022–2026,BEV
-US,Managed,BMW,i5 2023–2026,BEV
-US,Managed,BMW,i7 2022–2026,BEV
-US,Managed,BMW,iX 2021–2026,BEV
-US,Managed,BMW,330 2016–2025,PHEV
-US,Managed,BMW,750 2025–2026,PHEV
-US,Managed,BMW,i4 2022–2026,PHEV
-US,Managed,BMW,i5 2024–2026,PHEV
-US,Managed,BMW,iX 2022–2026,PHEV
-US,Managed,BMW,X5 2016–2026,PHEV
-US,Managed,BMW,X5 xDrive50e 2024–2026,PHEV
-US,Managed,BMW,XM 2023–2025,PHEV
-US,Managed,BMW,XM Label 2026,PHEV
-US,Managed,Cadillac,Escalade IQ 2025–2026,BEV
-US,Managed,Cadillac,Lyriq 2023–2026,BEV
-US,Managed,Cadillac,Optiq 2025–2026,BEV
-US,Managed,Chevrolet,Blazer 2024–2026,BEV
-US,Managed,Chevrolet,Bolt 2017–2027,BEV
-US,Managed,Chevrolet,Bolt EUV 2022–2023,BEV
-US,Managed,Chevrolet,Equinox 2024–2026,BEV
-US,Managed,Chevrolet,Silverado 2024–2026,BEV
-US,Managed,Chevrolet,Spark 2015–2022,BEV
 US,Managed,Chrysler,Pacifica 2018–2025,PHEV
 US,Managed,Dodge,Hornet 2024–2025,PHEV
 US,Managed,Fiat,500e 2014–2024,BEV
-US,Managed,Ford,F-150 Lightning 2022–2025,BEV
-US,Managed,GMC,HUMMER 2022–2026,BEV
-US,Managed,GMC,Sierra 2024–2026,BEV
-US,Managed,Honda,Prologue 2024–2026,BEV
 US,Managed,Hyundai,IONIQ 2017–2022,BEV
 US,Managed,Hyundai,IONIQ 5 2022–2026,BEV
 US,Managed,Hyundai,IONIQ 5 N 2024–2025,BEV
@@ -61,7 +34,6 @@ US,Managed,Kia,Niro 2018–2025,PHEV
 US,Managed,Kia,Sorento 2022–2026,PHEV
 US,Managed,Kia,Sportage 2023–2026,PHEV
 US,Managed,Land Rover,Discovery Sport 2020–2025,PHEV
-US,Managed,Land Rover,Range Rover 2023–2026,PHEV
 US,Managed,Lexus,RZ 2023–2026,BEV
 US,Managed,Lexus,RZ 450e 2023–2026,BEV
 US,Managed,Lexus,NX 450h 2022–2026,PHEV
@@ -71,7 +43,6 @@ US,Managed,Lexus,RX 450h+ 2024–2026,PHEV
 US,Managed,Lexus,TX 550h+ 2024–2026,PHEV
 US,Managed,Mazda,CX-70 2025–2026,PHEV
 US,Managed,Mazda,CX-90 2024–2026,PHEV
-US,Managed,MINI,Countryman 2024–2026,BEV
 US,Managed,Polestar,2 2021–2025,BEV
 US,Managed,Polestar,3 2025,BEV
 US,Managed,Porsche,Macan 4 2024–2026,BEV
@@ -97,19 +68,12 @@ US,Managed,Volkswagen,ID. Buzz 2025,BEV
 US,Managed,Volkswagen,ID.4 2021–2026,BEV
 CA,Managed,Audi,Q4 e-tron 2022–2026,BEV
 CA,Managed,Audi,Q8 e-tron 2024,BEV
-CA,Managed,BMW,i4 2021–2026,BEV
-CA,Managed,Chevrolet,Blazer 2024–2026,BEV
-CA,Managed,Chevrolet,Bolt 2017–2027,BEV
-CA,Managed,Chevrolet,Bolt EUV 2022–2023,BEV
-CA,Managed,Chevrolet,Equinox 2024–2026,BEV
-CA,Managed,Chevrolet,Silverado 2024–2026,BEV
 CA,Managed,Fiat,500e 2024–2025,BEV
 CA,Managed,Hyundai,IONIQ 5 2022–2026,BEV
-CA,Managed,Hyundai,IONIQ 6 2023–2025,BEV
 CA,Managed,Hyundai,Kona 2019–2026,BEV
 CA,Managed,Jaguar,I-PACE 2019–2023,BEV
 CA,Managed,Jeep,Wrangler 2024,PHEV
-CA,Managed,Kia,EV6 2022–2026,BEV
+CA,Managed,Kia,EV6 2022–2025,BEV
 CA,Managed,Kia,EV9 2024–2026,BEV
 CA,Managed,Kia,Niro 2020–2026,BEV
 CA,Managed,Subaru,Solterra 2023–2026,BEV
@@ -128,31 +92,29 @@ US,Tracking Only,Audi,S e-tron GT 2025,BEV
 US,Tracking Only,Audi,A7 2021,PHEV
 US,Tracking Only,Audi,A8 2020,PHEV
 US,Tracking Only,Audi,SQ8 2024,PHEV
-US,Tracking Only,BMW,i3 2016–2021,BEV
-US,Tracking Only,BMW,i8 2017–2019,BEV
-US,Tracking Only,BMW,330e 2017–2024,PHEV
-US,Tracking Only,BMW,430 2021–2022,PHEV
-US,Tracking Only,BMW,530 2017–2023,PHEV
-US,Tracking Only,BMW,530e 2019–2023,PHEV
-US,Tracking Only,BMW,540 2021,PHEV
-US,Tracking Only,BMW,550 2026,PHEV
-US,Tracking Only,BMW,740 2019,PHEV
-US,Tracking Only,BMW,i3 2016–2020,PHEV
-US,Tracking Only,BMW,X3 2020–2023,PHEV
-US,Tracking Only,BMW,X3 xDrive30e 2020–2021,PHEV
-US,Tracking Only,BMW,X5 xDrive45e 2021–2023,PHEV
-US,Tracking Only,BMW,Z4 2024,PHEV
+US,Tracking Only,Cadillac,Escalade IQ 2025–2026,BEV
 US,Tracking Only,Cadillac,Escalade IQL 2026,BEV
+US,Tracking Only,Cadillac,Lyriq 2023–2026,BEV
+US,Tracking Only,Cadillac,Optiq 2025–2026,BEV
 US,Tracking Only,Cadillac,Vistiq 2026,BEV
+US,Tracking Only,Chevrolet,Blazer 2024–2026,BEV
+US,Tracking Only,Chevrolet,Bolt 2017–2027,BEV
+US,Tracking Only,Chevrolet,Bolt EUV 2022–2023,BEV
+US,Tracking Only,Chevrolet,Equinox 2024–2026,BEV
+US,Tracking Only,Chevrolet,Silverado 2024–2026,BEV
+US,Tracking Only,Chevrolet,Spark 2015–2022,BEV
 US,Tracking Only,Chevrolet,Volt 2015–2019,PHEV
 US,Tracking Only,Dodge,Charger 2024–2026,BEV
 US,Tracking Only,Dodge,Charger 2024–2026,PHEV
+US,Tracking Only,Ford,F-150 Lightning 2022–2025,BEV
 US,Tracking Only,Ford,Focus 2017,BEV
 US,Tracking Only,Ford,Mustang 2021–2025,BEV
 US,Tracking Only,Ford,Mustang Mach-E 2021–2026,BEV
 US,Tracking Only,Ford,Transit 2022–2023,BEV
 US,Tracking Only,Ford,Escape 2020–2026,PHEV
 US,Tracking Only,Ford,Fusion 2016–2020,PHEV
+US,Tracking Only,GMC,HUMMER 2022–2026,BEV
+US,Tracking Only,GMC,Sierra 2024–2026,BEV
 US,Tracking Only,Hyundai,Genesis 2023–2025,BEV
 US,Tracking Only,Hyundai,Getz 2024–2025,BEV
 US,Tracking Only,Hyundai,Tucson 2024,BEV
@@ -166,11 +128,6 @@ US,Tracking Only,Land Rover,Range Rover Velar 2023,PHEV
 US,Tracking Only,Lincoln,Aviator 2020–2023,PHEV
 US,Tracking Only,Lincoln,Corsair 2022–2025,PHEV
 US,Tracking Only,Mercedes-Benz,CLA 350 2026,BEV
-US,Tracking Only,Mercedes-Benz,EQA 2022–2024,BEV
-US,Tracking Only,Mercedes-Benz,EQB 2022–2026,BEV
-US,Tracking Only,Mercedes-Benz,EQC 400 2020,BEV
-US,Tracking Only,Mercedes-Benz,EQE 2022–2026,BEV
-US,Tracking Only,Mercedes-Benz,EQS 2020–2026,BEV
 US,Tracking Only,Mercedes-Benz,eSprinter 2024–2025,BEV
 US,Tracking Only,Mercedes-Benz,G 580 2025,BEV
 US,Tracking Only,Mercedes-Benz,C 63 2025,PHEV
@@ -183,13 +140,7 @@ US,Tracking Only,Mercedes-Benz,GLC-Class 2025–2026,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 400 2025,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 450 2024–2026,PHEV
 US,Tracking Only,Mercedes-Benz,GLE 53 2025,PHEV
-US,Tracking Only,Mercedes-Benz,GLS 450 2025,PHEV
 US,Tracking Only,Mercedes-Benz,S 580 2024–2025,PHEV
-US,Tracking Only,MINI,Cooper 2018–2024,BEV
-US,Tracking Only,MINI,Cooper ALL4 2022,BEV
-US,Tracking Only,MINI,Cooper 2024,PHEV
-US,Tracking Only,MINI,Cooper ALL4 2023,PHEV
-US,Tracking Only,MINI,Cooper S E ALL4 2019,PHEV
 US,Tracking Only,Nissan,Ariya 2023–2025,BEV
 US,Tracking Only,Polestar,4 2025–2026,BEV
 US,Tracking Only,Porsche,Macan 2024–2026,BEV
@@ -209,39 +160,23 @@ US,Tracking Only,Volvo,V60 2021–2025,PHEV
 US,Tracking Only,Volvo,XC40 2025,PHEV
 US,Tracking Only,Volvo,XC60 2018–2026,PHEV
 US,Tracking Only,Volvo,XC90 2016–2026,PHEV
-CA,Tracking Only,Acura,ZDX 2024,BEV
 CA,Tracking Only,Audi,A6 e-tron 2025–2026,BEV
 CA,Tracking Only,Audi,e-tron 2019–2023,BEV
 CA,Tracking Only,Audi,Q6 e-tron 2025,BEV
 CA,Tracking Only,Audi,Q5 2024,PHEV
-CA,Tracking Only,BMW,i7 2022–2026,BEV
-CA,Tracking Only,BMW,iX 2021–2026,BEV
-CA,Tracking Only,BMW,330 2021–2024,PHEV
-CA,Tracking Only,BMW,330e 2022–2023,PHEV
-CA,Tracking Only,BMW,530 2021–2022,PHEV
-CA,Tracking Only,BMW,530e 2018–2023,PHEV
-CA,Tracking Only,BMW,550 2024–2026,PHEV
-CA,Tracking Only,BMW,745 2022,PHEV
-CA,Tracking Only,BMW,750 2024–2026,PHEV
-CA,Tracking Only,BMW,i4 2022–2025,PHEV
-CA,Tracking Only,BMW,iX 2022–2026,PHEV
-CA,Tracking Only,BMW,M5 2026,PHEV
-CA,Tracking Only,BMW,X3 2020–2024,PHEV
-CA,Tracking Only,BMW,X3 xDrive30e 2023–2024,PHEV
-CA,Tracking Only,BMW,X5 2020–2026,PHEV
-CA,Tracking Only,BMW,X5 xDrive45e 2022,PHEV
-CA,Tracking Only,BMW,X5 xDrive50e 2025,PHEV
-CA,Tracking Only,BMW,XM 2023,PHEV
-CA,Tracking Only,BMW,XM Label 2026,PHEV
 CA,Tracking Only,Cadillac,Lyriq 2023–2026,BEV
 CA,Tracking Only,Cadillac,Optiq 2025–2026,BEV
 CA,Tracking Only,Cadillac,Vistiq 2026,BEV
+CA,Tracking Only,Chevrolet,Blazer 2024–2026,BEV
+CA,Tracking Only,Chevrolet,Bolt 2017–2027,BEV
+CA,Tracking Only,Chevrolet,Bolt EUV 2022–2023,BEV
+CA,Tracking Only,Chevrolet,Equinox 2024–2026,BEV
+CA,Tracking Only,Chevrolet,Silverado 2024–2026,BEV
 CA,Tracking Only,Chevrolet,Volt 2013–2019,PHEV
 CA,Tracking Only,Chrysler,Pacifica 2022–2026,PHEV
 CA,Tracking Only,Dodge,Charger 2024–2025,BEV
 CA,Tracking Only,GMC,HUMMER 2023–2026,BEV
 CA,Tracking Only,GMC,Sierra 2024–2026,BEV
-CA,Tracking Only,Honda,Prologue 2024–2025,BEV
 CA,Tracking Only,Hyundai,IONIQ 2020–2021,BEV
 CA,Tracking Only,Hyundai,IONIQ 9 2026,BEV
 CA,Tracking Only,Jeep,Wagoneer S 2024–2025,BEV
@@ -250,9 +185,6 @@ CA,Tracking Only,Kia,Soul 2022,BEV
 CA,Tracking Only,Kia,Sportage 2023–2024,PHEV
 CA,Tracking Only,Lexus,RZ 2023–2025,BEV
 CA,Tracking Only,Lexus,NX 450h+ 2024–2026,PHEV
-CA,Tracking Only,MINI,Cooper 2019–2026,BEV
-CA,Tracking Only,MINI,Countryman 2024–2026,BEV
-CA,Tracking Only,MINI,Cooper ALL4 2023,PHEV
 CA,Tracking Only,Polestar,2 2021–2024,BEV
 CA,Tracking Only,Polestar,3 2025,BEV
 CA,Tracking Only,Polestar,4 2026,BEV
