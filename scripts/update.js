@@ -242,19 +242,38 @@ function toSnapshot(groups) {
   const map = {};
   groups.filter(g => g.classification).forEach(g => {
     map[g.key] = { make: g.make, model: g.model, region: g.region, powertrain: g.powertrain,
-                   years: g.years, sig: g.sig, classification: g.classification };
+                   years: g.years, sig: g.sig, classification: g.classification,
+                   caps: Object.keys(g.endpoints).filter(k => g.endpoints[k]).sort() };
   });
   return map;
 }
+// sort: make A→Z, then BEV before PHEV, then model
+const PT_ORDER = { BEV: 0, PHEV: 1 };
+function bySortKey(a, b) {
+  return a.make.localeCompare(b.make)
+      || ((PT_ORDER[a.powertrain] ?? 9) - (PT_ORDER[b.powertrain] ?? 9))
+      || a.model.localeCompare(b.model);
+}
 
-/* ---------------------------------------------------------------- diff */
+/* ---------------------------------------------------------------- diff
+   Three buckets: add (new model), change (existing model: years and/or
+   capabilities moved), remove (gone). A "change" carries the specific deltas. */
 function diff(curSnap, baseSnap) {
   const changes = [];
   for (const k in curSnap) {
     const c = curSnap[k], b = baseSnap[k];
     if (!b) { changes.push({ type: "add", g: c }); continue; }
-    if ((c.years || []).join(",") !== (b.years || []).join(",")) changes.push({ type: "year_bump", g: c, b });
-    if ((c.sig || "") !== (b.sig || "")) changes.push({ type: "endpoint_change", g: c, b });
+    const deltas = [];
+    const cy = (c.years || []).join(","), by = (b.years || []).join(",");
+    if (cy !== by) deltas.push({ kind: "years", was: yearRange(b.years), now: yearRange(c.years) });
+    if ((c.sig || "") !== (b.sig || "")) {
+      const before = new Set(b.caps || []), after = new Set(c.caps || []);
+      const gained = [...after].filter(x => !before.has(x)).sort();
+      const lost = [...before].filter(x => !after.has(x)).sort();
+      deltas.push({ kind: "caps", gained, lost,
+                    flip: b.classification !== c.classification ? { from: b.classification, to: c.classification } : null });
+    }
+    if (deltas.length) changes.push({ type: "change", g: c, b, deltas });
   }
   for (const k in baseSnap) if (!curSnap[k]) changes.push({ type: "remove", b: baseSnap[k] });
   return changes;
@@ -264,6 +283,29 @@ function diff(curSnap, baseSnap) {
 function label(g) { return `${g.make} ${g.model} (${g.region}·${g.powertrain})`; }
 function cls(c) { return c === "MANAGED" ? "Managed" : c === "TRACKING" ? "Tracking Only" : "excluded"; }
 
+// Describe one change's detail (used in both the change log and the PR checklist).
+function changeDetail(c) {
+  if (c.type === "add") return `years \`${yearRange(c.g.years)}\` · ${cls(c.g.classification)}`;
+  if (c.type === "remove") return `no longer present`;
+  // type === "change": combine all deltas on one line, separated by "; "
+  const parts = [];
+  c.deltas.forEach(d => {
+    if (d.kind === "years") parts.push(`updated years: was \`${d.was}\`, now \`${d.now}\``);
+    else if (d.kind === "caps") {
+      const bits = [];
+      if (d.gained.length) bits.push("gained " + d.gained.map(x => `\`${x}\``).join(", "));
+      if (d.lost.length) bits.push("lost " + d.lost.map(x => `\`${x}\``).join(", "));
+      let s = bits.join("; ");
+      if (d.flip) s += ` (now ${cls(d.flip.to)})`;
+      if (s) parts.push(s);
+    }
+  });
+  return parts.join("; ");
+}
+// the model identity for a change (uses current group, or baseline for removals)
+function changeLabel(c) { return label(c.type === "remove" ? c.b : c.g); }
+function changeLine(c) { return `**${changeLabel(c)}** — ${changeDetail(c)}`; }
+
 function renderChangesMd(changes, when, counts, staleOverlays) {
   const byType = t => changes.filter(c => c.type === t);
   const lines = [];
@@ -272,19 +314,15 @@ function renderChangesMd(changes, when, counts, staleOverlays) {
     lines.push("**No changes since the last saved version.** The current data matches the baseline.", "");
   } else {
     lines.push(`**${changes.length} change${changes.length > 1 ? "s" : ""} detected** since the last saved version.`, "");
-    const sec = (title, arr, fmt) => {
+    const sec = (title, arr) => {
       if (!arr.length) return;
       lines.push(`## ${title} (${arr.length})`, "");
-      arr.forEach(c => lines.push("- " + fmt(c)));
+      arr.forEach(c => lines.push("- " + changeLine(c)));
       lines.push("");
     };
-    sec("Added", byType("add"), c => `**${label(c.g)}** — years \`${yearRange(c.g.years)}\` · ${cls(c.g.classification)}`);
-    sec("Year bumps", byType("year_bump"), c => `**${label(c.g)}** — \`${yearRange(c.b.years)}\` → \`${yearRange(c.g.years)}\``);
-    sec("Endpoint changes", byType("endpoint_change"), c => {
-      const flip = c.b.classification !== c.g.classification ? ` · ${cls(c.b.classification)} → ${cls(c.g.classification)}` : "";
-      return `**${label(c.g)}** — capabilities changed${flip}`;
-    });
-    sec("Removed", byType("remove"), c => `**${label(c.b)}** — was years \`${yearRange(c.b.years)}\`, no longer present`);
+    sec("Added", byType("add"));
+    sec("Changed", byType("change"));
+    sec("Removed", byType("remove"));
   }
   if (staleOverlays.length) {
     lines.push(`## ⚠ Stale overlays (${staleOverlays.length})`, "",
@@ -301,26 +339,61 @@ function renderChangesMd(changes, when, counts, staleOverlays) {
   return lines.join("\n");
 }
 
+// PR description body: self-sufficient checklist with full detail + CSV link.
+function renderPrBody(changes, when, counts, csvName) {
+  const byType = t => changes.filter(c => c.type === t);
+  const L = [];
+  const branch = `evmatrix/update-${stampForBranch(when)}`;
+  L.push(`### 📥 Download`, "",
+    `[\`${csvName}\`](../blob/${branch}/lists/${csvName}) — combined CSV for this run (open, then **Raw → Save As**).`, "");
+  if (!changes.length) {
+    L.push(`### No changes`, "", "The current data matches the last saved version. Nothing to verify.", "");
+  } else {
+    L.push(`### Review checklist — ${changes.length} change${changes.length > 1 ? "s" : ""}`, "",
+      "Tick each item as you confirm it. GitHub saves your checkmarks on this PR.", "");
+    const sec = (title, arr) => {
+      if (!arr.length) return;
+      L.push(`#### ${title} (${arr.length})`);
+      arr.forEach(c => L.push(`- [ ] ${changeLine(c)}`));
+      L.push("");
+    };
+    sec("Added", byType("add"));
+    sec("Changed", byType("change"));
+    sec("Removed", byType("remove"));
+  }
+  L.push(`### List sizes`, "",
+    `| List | Rows |`, `|---|---|`,
+    `| US · Managed | ${counts.US_MANAGED} |`,
+    `| CA · Managed | ${counts.CA_MANAGED} |`,
+    `| US · Tracking Only | ${counts.US_TRACKING} |`,
+    `| CA · Tracking Only | ${counts.CA_TRACKING} |`, "");
+  return L.join("\n");
+}
+// branch name uses the full timestamp; must match the workflow's branch pattern
+function stampForBranch(d) { return stamp(d); }
+
 function listRows(groups, region, classification) {
   return groups
     .filter(g => g.region === region && g.classification === classification)
-    .sort((a, b) => a.make.localeCompare(b.make) || a.model.localeCompare(b.model))
+    .sort(bySortKey)   // make A→Z, BEV before PHEV, then model
     .map(g => ({ make: g.make, model: g.model + (yearRange(g.years) ? " " + yearRange(g.years) : ""),
                  powertrain: g.powertrain }));   // BEV / PHEV
-}
-function listHTML(title, recs, dateStr) {
-  return `<!-- ${title} (${recs.length}) — created on ${dateStr} -->
-<table>
-  <thead><tr><th>Make</th><th>Model</th><th>Powertrain</th></tr></thead>
-  <tbody>
-${recs.map(r => `    <tr><td>${esc(r.make)}</td><td>${esc(r.model)}</td><td>${esc(r.powertrain)}</td></tr>`).join("\n")}
-  </tbody>
-</table>
-`;
 }
 function listMD(title, recs, dateStr) {
   return `# ${title} (${recs.length}) - created on ${dateStr}\n\n| Make | Model | Powertrain |\n|---|---|---|\n` +
     recs.map(r => `| ${r.make} | ${r.model} | ${r.powertrain} |`).join("\n") + "\n";
+}
+// Combined CSV: one flat table across all four lists. Region + Type columns
+// distinguish which list each row belongs to (needed once they're merged).
+function csvCell(v) {
+  v = v == null ? "" : String(v);
+  return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+}
+function buildExportCsv(allRows) {
+  const header = ["Region", "Type", "Make", "Model", "Powertrain"];
+  const lines = [header.join(",")];
+  allRows.forEach(r => lines.push([r.region, r.type, r.make, r.model, r.powertrain].map(csvCell).join(",")));
+  return lines.join("\n") + "\n";
 }
 
 /* ---------------------------------------------------------------- main */
@@ -350,17 +423,28 @@ async function main() {
   ];
   const counts = {};
   const dateStr = when.toISOString().slice(0, 10);   // UTC YYYY-MM-DD
+  const exportRows = [];
   defs.forEach(([id, region, classification, title]) => {
     const recs = listRows(groups, region, classification);
     counts[id] = recs.length;
     const base = id.toLowerCase().replace("_", "-");
-    fs.writeFileSync(path.join(LISTS_DIR, base + ".html"), listHTML(title, recs, dateStr));
     fs.writeFileSync(path.join(LISTS_DIR, base + ".md"), listMD(title, recs, dateStr));
+    const typeLabel = classification === "MANAGED" ? "Managed" : "Tracking Only";
+    recs.forEach(r => exportRows.push({ region, type: typeLabel, make: r.make, model: r.model, powertrain: r.powertrain }));
   });
+
+  // single combined CSV for easy one-click download; date in the filename
+  const csvName = `evmatrix-export-${dateStr}.csv`;
+  fs.writeFileSync(path.join(LISTS_DIR, csvName), buildExportCsv(exportRows));
 
   // timestamped change log (always written, even "no changes", so runs are auditable)
   const changesFile = path.join(CHANGES_DIR, `${stamp(when)}.md`);
   fs.writeFileSync(changesFile, renderChangesMd(changes, when, counts, staleOverlays));
+
+  // PR description body (self-sufficient checklist + CSV download link).
+  // Written to a workspace file the workflow reads into the PR body. Not committed.
+  const prBodyFile = path.join(ROOT, ".pr-body.md");
+  fs.writeFileSync(prBodyFile, renderPrBody(changes, when, counts, csvName));
 
   // new baseline snapshot
   fs.writeFileSync(LATEST, JSON.stringify(
