@@ -367,7 +367,7 @@ function renderPrBody(changes, when, counts, csvName) {
     link(`lists/us-tracking.md`, "US · Tracking Only") + " · " +
     link(`lists/ca-managed.md`, "CA · Managed") + " · " +
     link(`lists/ca-tracking.md`, "CA · Tracking Only"), "",
-    link(`lists/${csvName}`, `\`${csvName}\``) + " — combined CSV for this run (open, then **Raw → Save As**).", "");
+    link(`lists/${csvName}`, `\`${csvName}\``) + " — combined CSV for this run.", "");
   if (!changes.length) {
     L.push(`### No changes`, "", "The current data matches the last saved version. Nothing to verify.", "");
   } else {
