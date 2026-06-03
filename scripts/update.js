@@ -371,7 +371,8 @@ function renderPrBody(changes, when, counts, csvName) {
     L.push(`### No changes`, "", "The current data matches the last saved version. Nothing to verify.", "");
   } else {
     L.push(`### Review checklist — ${changes.length} change${changes.length > 1 ? "s" : ""}`, "",
-      "Tick each item as you confirm it. Checked boxes do not affect the linked PR", "");
+      "Tick each item as you confirm it.  ",
+      "⚠️ Checkboxes are just visual notes — they do not control what gets saved. To defer a change and keep it appearing next run, see [‘Deferring a change’ in the README](../blob/main/README.md#deferring-a-change).", "");
     const sec = (title, arr) => {
       if (!arr.length) return;
       L.push(`## ${title} (${arr.length})`);
