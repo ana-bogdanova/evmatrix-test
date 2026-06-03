@@ -105,7 +105,11 @@ function normaliseApi(records) {
 /* ---------------------------------------------------------------- overlays */
 function matchTarget(ov, g) {
   if (norm(ov.make).toLowerCase() !== g.make.toLowerCase()) return false;
+  // model: exact match, OR prefix match if modelPrefix is given
   if (ov.model && norm(ov.model).toLowerCase() !== g.model.toLowerCase()) return false;
+  if (ov.modelPrefix && !g.model.toLowerCase().startsWith(norm(ov.modelPrefix).toLowerCase())) return false;
+  // optional powertrain scope (e.g. only the PHEV variant)
+  if (ov.powertrain && norm(ov.powertrain).toUpperCase() !== g.powertrain) return false;
   return true;
 }
 
@@ -207,6 +211,12 @@ function computeMerged(rows, overlays) {
       });
     }
   });
+
+  // exclude: drop matching vehicles entirely (removed from all lists)
+  const excludes = overlays.filter(o => o.type === "exclude");
+  if (excludes.length) {
+    working = working.filter(r => !excludes.some(o => matchTarget(o, r)));
+  }
 
   const ctx = { blocklist: overlays.filter(o => o.type === "blocklist") };
 
@@ -367,7 +377,7 @@ function renderPrBody(changes, when, counts, csvName) {
     link(`lists/us-tracking.md`, "US · Tracking Only") + " · " +
     link(`lists/ca-managed.md`, "CA · Managed") + " · " +
     link(`lists/ca-tracking.md`, "CA · Tracking Only"), "",
-    link(`lists/${csvName}`, `\`${csvName}\``) + " — combined CSV for this run.", "");
+    link(`lists/${csvName}`, `\`${csvName}\``) + " — combined CSV for this run (open, then **Raw → Save As**).", "");
   if (!changes.length) {
     L.push(`### No changes`, "", "The current data matches the last saved version. Nothing to verify.", "");
   } else {
@@ -416,6 +426,25 @@ function buildExportCsv(allRows) {
   const header = ["Region", "Type", "Make", "Model", "Powertrain"];
   const lines = [header.join(",")];
   allRows.forEach(r => lines.push([r.region, r.type, r.make, r.model, r.powertrain].map(csvCell).join(",")));
+  return lines.join("\n") + "\n";
+}
+// A readable CSV mirror of overlays.json (regenerated each run from the JSON).
+function buildOverlaysCsv(overlays) {
+  const TYPE = { exclude: "Excluded", blocklist: "Tracking Only", year_correction: "Year correction", add_missing: "Add missing" };
+  const header = ["Effect", "Make", "Model", "Powertrain", "From", "To", "Notes"];
+  const lines = [header.join(",")];
+  (overlays || []).forEach(o => {
+    const model = o.model || (o.modelPrefix ? `${o.modelPrefix}* (all models starting with “${o.modelPrefix}”)` : "(all models)");
+    lines.push([
+      TYPE[o.type] || o.type,
+      o.make || "",
+      model,
+      o.powertrain || "",
+      o.from || "",
+      o.to || "",
+      o._note || "",
+    ].map(csvCell).join(","));
+  });
   return lines.join("\n") + "\n";
 }
 
@@ -543,6 +572,9 @@ async function main() {
   fs.writeFileSync(path.join(DOCS_DIR, "index.html"), buildPublicPage(pageSections, dateStr));
   // tell Pages to serve files as-is (skip Jekyll processing)
   fs.writeFileSync(path.join(DOCS_DIR, ".nojekyll"), "");
+
+  // readable CSV mirror of the current overlays (regenerated from overlays.json)
+  fs.writeFileSync(path.join(DATA_DIR, "overlays.csv"), buildOverlaysCsv(overlays));
 
   // timestamped change log (always written, even "no changes", so runs are auditable)
   const changesFile = path.join(CHANGES_DIR, `${stamp(when)}.md`);
