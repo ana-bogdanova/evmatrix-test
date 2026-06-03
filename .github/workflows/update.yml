@@ -26,26 +26,17 @@ jobs:
         id: run
         run: node scripts/update.js
 
+      - name: Remove obsolete HTML lists (no longer generated)
+        run: rm -f lists/*.html
+
       - name: Open a pull request with the changes
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "EVMatrix update ${{ steps.run.outputs.stamp }} (${{ steps.run.outputs.summary }})"
           branch: "evmatrix/update-${{ steps.run.outputs.stamp }}"
           delete-branch: true
           title: "EVMatrix update — ${{ steps.run.outputs.stamp }} (${{ steps.run.outputs.summary }})"
-          body: |
-            Automated EVMatrix update run.
-
-            **Summary:** ${{ steps.run.outputs.summary }} since the last saved version.
-
-            ### What to review
-            - `changes/${{ steps.run.outputs.stamp }}.md` — the human-readable change log for this run.
-            - `lists/*.html` and `lists/*.md` — the regenerated published lists (copy the HTML into the Help Center).
-            - `data/latest.json` — the new saved baseline (the next run diffs against this).
-
-            Merge this PR to make the update official. If something looks wrong
-            (e.g. the source returned unexpected data), close the PR without merging
-            and the saved baseline stays untouched.
+          body-path: .pr-body.md
           add-paths: |
             data/latest.json
             changes/
