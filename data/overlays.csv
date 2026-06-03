@@ -1,0 +1,2 @@
+Effect,Make,Model,Powertrain,From,To,Notes
+Year correction,Kia,EV6,BEV,2025,2026,"EXAMPLE — fixes a wrong model year. Delete or edit. 'from' is what the source says, 'to' is the correct value."
