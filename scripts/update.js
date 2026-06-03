@@ -541,6 +541,8 @@ async function main() {
 
   // public GitHub Pages page (all four lists, baked in); served at a stable URL
   fs.writeFileSync(path.join(DOCS_DIR, "index.html"), buildPublicPage(pageSections, dateStr));
+  // tell Pages to serve files as-is (skip Jekyll processing)
+  fs.writeFileSync(path.join(DOCS_DIR, ".nojekyll"), "");
 
   // timestamped change log (always written, even "no changes", so runs are auditable)
   const changesFile = path.join(CHANGES_DIR, `${stamp(when)}.md`);
