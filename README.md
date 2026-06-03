@@ -89,13 +89,34 @@ Rules: every overlay needs a unique `id` and a `type`. `make` is required; `mode
 
 ---
 
+## Deferring a change
+
+The checkboxes in the pull request are **only visual notes** — ticking or unticking one changes nothing. When you merge a PR, **every** change in it is accepted into the saved baseline, regardless of the checkboxes. So a checkbox cannot hold a change back.
+
+To actually defer a change — keep a model *out* of Managed for now, while still seeing it resurface in future runs until you're ready — use a **blocklist overlay**.
+
+**Example:** the source now reports that the BMW 330e supports start/stop charge commands, so this run wants to move it to Managed. You're not ready to manage it yet.
+
+1. **Do not merge the PR yet.**
+2. Open `data/overlays.json`, add:
+   ```json
+   { "id": "defer-bmw-330e", "type": "blocklist", "make": "BMW", "model": "330e" }
+   ```
+   Commit.
+3. **Re-run the workflow.** The 330e now stays Tracking-Only — the overlay overrides the new commands. Merge that PR when it looks right.
+4. Because the source genuinely still reports start/stop, the change keeps appearing in future runs, so it won't get lost.
+5. **When you're ready to manage it:** delete that overlay entry from `data/overlays.json`, commit, re-run. The 330e then flows into the Managed list.
+
+This works for the Managed-vs-Tracking case (the start/stop example above). It is the supported way to say "not yet" to a change without losing track of it.
+
+---
+
 ## Reading a change log
 
 Each run writes `changes/<timestamp>.md`. It lists, in plain English:
-- **Added** — new make/model/variant, with its year range and Managed/Tracking type.
+- **Added** — new models, with year range and Managed/Tracking type.
+- **Changed** — existing models whose **relevant** endpoints or model years moved. The line spells out exactly what changed (e.g. *updated years: was `2023–2025`, now `2023–2026`* or *gained `charge-start`, lost `charge-stop`*). Only the endpoints that affect classification are reported; unrelated capability changes are ignored.
 - **Removed** — no longer present in the source.
-- **Year bumps** — the model-year range moved.
-- **Endpoint changes** — capabilities changed, including any flip between Managed and Tracking-Only.
 - **Stale overlays** — corrections that need your attention.
 - **List sizes** — row counts for the four lists.
 
