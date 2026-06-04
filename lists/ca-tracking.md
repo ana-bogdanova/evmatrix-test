@@ -1,4 +1,4 @@
-# CA · Tracking Only (35) - created on 2026-06-03
+# CA · Tracking Only (33) - created on 2026-06-04
 
 | Make | Model | Powertrain |
 |---|---|---|
@@ -25,13 +25,11 @@
 | Jeep | Wagoneer S 2024–2025 | BEV |
 | Kia | EV4 2026 | BEV |
 | Kia | Sportage 2023–2024 | PHEV |
-| Land Rover | Discovery Sport 2025 | PHEV |
 | Lexus | RZ 2023–2025 | BEV |
 | Lexus | NX 450h+ 2024–2026 | PHEV |
 | Polestar | 2 2021–2024 | BEV |
 | Polestar | 3 2025 | BEV |
 | Polestar | 4 2026 | BEV |
-| Toyota | bZ 2026 | BEV |
 | Toyota | C-HR 2026 | BEV |
 | Volvo | EX30 2025–2026 | BEV |
 | Volvo | XC40 2021–2024 | BEV |

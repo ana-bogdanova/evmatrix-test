@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-06-03T23:27:19.700Z",
-  "recordCount": 1489,
+  "fetchedAt": "2026-06-04T20:32:20.680Z",
+  "recordCount": 1492,
   "snapshot": {
     "alfa romeo||tonale||us||phev": {
       "make": "Alfa Romeo",
@@ -1349,58 +1349,6 @@
         "wheel-tires"
       ]
     },
-    "chevrolet||blazer||ca||bev": {
-      "make": "Chevrolet",
-      "model": "Blazer",
-      "region": "CA",
-      "powertrain": "BEV",
-      "years": [
-        2024,
-        2026
-      ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
-      "classification": "TRACKING",
-      "caps": [
-        "charge-chargelimits",
-        "charge-detailedchargingstatus",
-        "charge-ischarging",
-        "charge-ischargingcableconnected",
-        "charge-setchargelimit",
-        "charge-start",
-        "charge-stop",
-        "charge-voltage",
-        "diagnostics-abs",
-        "diagnostics-activesafety",
-        "diagnostics-airbag",
-        "diagnostics-brakefluid",
-        "diagnostics-driverassistance",
-        "diagnostics-dtccount",
-        "diagnostics-dtclist",
-        "diagnostics-emissions",
-        "diagnostics-evbatteryconditioning",
-        "diagnostics-evcharging",
-        "diagnostics-evdriveunit",
-        "diagnostics-evhvbattery",
-        "diagnostics-lighting",
-        "diagnostics-mil",
-        "diagnostics-oillife",
-        "diagnostics-oilpressure",
-        "diagnostics-oiltemperature",
-        "diagnostics-telematics",
-        "diagnostics-tirepressure",
-        "diagnostics-tirepressuremonitoring",
-        "diagnostics-transmission",
-        "diagnostics-washerfluid",
-        "diagnostics-waterinfuel",
-        "location-preciselocation",
-        "odometer-traveleddistance",
-        "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
-        "tractionbattery-stateofcharge",
-        "vehicleidentification-vin",
-        "wheel-tires"
-      ]
-    },
     "chevrolet||blazer||us||bev": {
       "make": "Chevrolet",
       "model": "Blazer",
@@ -1454,18 +1402,19 @@
         "wheel-tires"
       ]
     },
-    "chevrolet||bolt||ca||bev": {
+    "chevrolet||blazer||ca||bev": {
       "make": "Chevrolet",
-      "model": "Bolt",
+      "model": "Blazer",
       "region": "CA",
       "powertrain": "BEV",
       "years": [
-        2017,
-        2027
+        2024,
+        2026
       ],
-      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,closure-lock,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
+        "charge-chargelimits",
         "charge-detailedchargingstatus",
         "charge-ischarging",
         "charge-ischargingcableconnected",
@@ -1473,7 +1422,6 @@
         "charge-start",
         "charge-stop",
         "charge-voltage",
-        "closure-lock",
         "diagnostics-abs",
         "diagnostics-activesafety",
         "diagnostics-airbag",
@@ -1560,16 +1508,16 @@
         "wheel-tires"
       ]
     },
-    "chevrolet||bolt euv||ca||bev": {
+    "chevrolet||bolt||ca||bev": {
       "make": "Chevrolet",
-      "model": "Bolt EUV",
+      "model": "Bolt",
       "region": "CA",
       "powertrain": "BEV",
       "years": [
-        2022,
-        2023
+        2017,
+        2027
       ],
-      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,closure-lock,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-detailedchargingstatus",
@@ -1579,6 +1527,7 @@
         "charge-start",
         "charge-stop",
         "charge-voltage",
+        "closure-lock",
         "diagnostics-abs",
         "diagnostics-activesafety",
         "diagnostics-airbag",
@@ -1632,6 +1581,57 @@
         "charge-voltage",
         "closure-lock",
         "closure-unlock",
+        "diagnostics-abs",
+        "diagnostics-activesafety",
+        "diagnostics-airbag",
+        "diagnostics-brakefluid",
+        "diagnostics-driverassistance",
+        "diagnostics-dtccount",
+        "diagnostics-dtclist",
+        "diagnostics-emissions",
+        "diagnostics-evbatteryconditioning",
+        "diagnostics-evcharging",
+        "diagnostics-evdriveunit",
+        "diagnostics-evhvbattery",
+        "diagnostics-lighting",
+        "diagnostics-mil",
+        "diagnostics-oillife",
+        "diagnostics-oilpressure",
+        "diagnostics-oiltemperature",
+        "diagnostics-telematics",
+        "diagnostics-tirepressure",
+        "diagnostics-tirepressuremonitoring",
+        "diagnostics-transmission",
+        "diagnostics-washerfluid",
+        "diagnostics-waterinfuel",
+        "location-preciselocation",
+        "odometer-traveleddistance",
+        "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
+        "tractionbattery-stateofcharge",
+        "vehicleidentification-vin",
+        "wheel-tires"
+      ]
+    },
+    "chevrolet||bolt euv||ca||bev": {
+      "make": "Chevrolet",
+      "model": "Bolt EUV",
+      "region": "CA",
+      "powertrain": "BEV",
+      "years": [
+        2022,
+        2023
+      ],
+      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "classification": "TRACKING",
+      "caps": [
+        "charge-detailedchargingstatus",
+        "charge-ischarging",
+        "charge-ischargingcableconnected",
+        "charge-setchargelimit",
+        "charge-start",
+        "charge-stop",
+        "charge-voltage",
         "diagnostics-abs",
         "diagnostics-activesafety",
         "diagnostics-airbag",
@@ -1772,16 +1772,16 @@
         "wheel-tires"
       ]
     },
-    "chevrolet||silverado||ca||bev": {
+    "chevrolet||silverado||us||bev": {
       "make": "Chevrolet",
       "model": "Silverado",
-      "region": "CA",
+      "region": "US",
       "powertrain": "BEV",
       "years": [
         2024,
         2026
       ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,closure-unlock,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -1792,6 +1792,7 @@
         "charge-start",
         "charge-stop",
         "charge-voltage",
+        "closure-unlock",
         "diagnostics-abs",
         "diagnostics-activesafety",
         "diagnostics-airbag",
@@ -1824,16 +1825,16 @@
         "wheel-tires"
       ]
     },
-    "chevrolet||silverado||us||bev": {
+    "chevrolet||silverado||ca||bev": {
       "make": "Chevrolet",
       "model": "Silverado",
-      "region": "US",
+      "region": "CA",
       "powertrain": "BEV",
       "years": [
         2024,
         2026
       ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,closure-unlock,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,charge-voltage,diagnostics-abs,diagnostics-activesafety,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-dtccount,diagnostics-dtclist,diagnostics-emissions,diagnostics-evbatteryconditioning,diagnostics-evcharging,diagnostics-evdriveunit,diagnostics-evhvbattery,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-oiltemperature,diagnostics-telematics,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -1844,7 +1845,6 @@
         "charge-start",
         "charge-stop",
         "charge-voltage",
-        "closure-unlock",
         "diagnostics-abs",
         "diagnostics-activesafety",
         "diagnostics-airbag",
@@ -2033,7 +2033,7 @@
         2022,
         2026
       ],
-      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,closure-lock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,closure-lock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-oillife,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-chargetimers",
@@ -2049,7 +2049,6 @@
         "diagnostics-emissions",
         "diagnostics-lighting",
         "diagnostics-mil",
-        "diagnostics-oillife",
         "diagnostics-oilpressure",
         "diagnostics-tirepressure",
         "diagnostics-tirepressuremonitoring",
@@ -2058,6 +2057,7 @@
         "diagnostics-waterinfuel",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-oillife",
         "location-preciselocation",
         "lowvoltagebattery-status",
         "odometer-traveleddistance",
@@ -2237,7 +2237,7 @@
         2024,
         2025
       ],
-      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-lock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-lock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
         "charge-chargetimers",
@@ -2265,11 +2265,11 @@
         "hvac-iscabinhvacactive",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
-        "internalcombustionengine-range",
         "location-preciselocation",
         "lowvoltagebattery-status",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -3088,36 +3088,6 @@
         "vehicleidentification-vin"
       ]
     },
-    "hyundai||ioniq 6||ca||bev": {
-      "make": "Hyundai",
-      "model": "IONIQ 6",
-      "region": "CA",
-      "powertrain": "BEV",
-      "years": [
-        2023,
-        2025
-      ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,closure-doors,closure-enginecover,closure-islocked,closure-reartrunk,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
-      "classification": "MANAGED",
-      "caps": [
-        "charge-chargelimits",
-        "charge-detailedchargingstatus",
-        "charge-ischarging",
-        "charge-ischargingcableconnected",
-        "charge-start",
-        "charge-stop",
-        "closure-doors",
-        "closure-enginecover",
-        "closure-islocked",
-        "closure-reartrunk",
-        "location-preciselocation",
-        "odometer-traveleddistance",
-        "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
-        "tractionbattery-stateofcharge",
-        "vehicleidentification-vin"
-      ]
-    },
     "hyundai||ioniq 6||us||bev": {
       "make": "Hyundai",
       "model": "IONIQ 6",
@@ -3808,7 +3778,7 @@
         2021,
         2025
       ],
-      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-lock,closure-unlock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-lock,closure-unlock,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
         "charge-chargetimers",
@@ -3837,11 +3807,11 @@
         "hvac-iscabinhvacactive",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
-        "internalcombustionengine-range",
         "location-preciselocation",
         "lowvoltagebattery-status",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -3855,9 +3825,10 @@
       "years": [
         2024
       ],
-      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,diagnostics-abs,diagnostics-airbag,diagnostics-brakefluid,diagnostics-driverassistance,diagnostics-emissions,diagnostics-lighting,diagnostics-mil,diagnostics-oillife,diagnostics-oilpressure,diagnostics-tirepressure,diagnostics-tirepressuremonitoring,diagnostics-transmission,diagnostics-washerfluid,diagnostics-waterinfuel,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,lowvoltagebattery-status,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
+        "charge-chargetimers",
         "charge-detailedchargingstatus",
         "charge-ischarging",
         "charge-ischargingcableconnected",
@@ -3995,6 +3966,37 @@
         "vehicleidentification-vin"
       ]
     },
+    "kia||ev9||ca||bev": {
+      "make": "Kia",
+      "model": "EV9",
+      "region": "CA",
+      "powertrain": "BEV",
+      "years": [
+        2024,
+        2026
+      ],
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,closure-doors,closure-enginecover,closure-islocked,closure-reartrunk,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
+      "classification": "MANAGED",
+      "caps": [
+        "charge-chargelimits",
+        "charge-detailedchargingstatus",
+        "charge-ischarging",
+        "charge-ischargingcableconnected",
+        "charge-setchargelimit",
+        "charge-start",
+        "charge-stop",
+        "closure-doors",
+        "closure-enginecover",
+        "closure-islocked",
+        "closure-reartrunk",
+        "location-preciselocation",
+        "odometer-traveleddistance",
+        "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
+        "tractionbattery-stateofcharge",
+        "vehicleidentification-vin"
+      ]
+    },
     "kia||ev9||us||bev": {
       "make": "Kia",
       "model": "EV9",
@@ -4032,37 +4034,6 @@
         "hvac-cabintargettemperature",
         "hvac-iscabinhvacactive",
         "hvac-isfrontdefrosteractive",
-        "location-preciselocation",
-        "odometer-traveleddistance",
-        "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
-        "tractionbattery-stateofcharge",
-        "vehicleidentification-vin"
-      ]
-    },
-    "kia||ev9||ca||bev": {
-      "make": "Kia",
-      "model": "EV9",
-      "region": "CA",
-      "powertrain": "BEV",
-      "years": [
-        2024,
-        2026
-      ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,closure-doors,closure-enginecover,closure-islocked,closure-reartrunk,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
-      "classification": "MANAGED",
-      "caps": [
-        "charge-chargelimits",
-        "charge-detailedchargingstatus",
-        "charge-ischarging",
-        "charge-ischargingcableconnected",
-        "charge-setchargelimit",
-        "charge-start",
-        "charge-stop",
-        "closure-doors",
-        "closure-enginecover",
-        "closure-islocked",
-        "closure-reartrunk",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
@@ -4109,37 +4080,6 @@
         "hvac-cabintargettemperature",
         "hvac-iscabinhvacactive",
         "hvac-isfrontdefrosteractive",
-        "location-preciselocation",
-        "odometer-traveleddistance",
-        "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
-        "tractionbattery-stateofcharge",
-        "vehicleidentification-vin"
-      ]
-    },
-    "kia||niro||ca||bev": {
-      "make": "Kia",
-      "model": "Niro",
-      "region": "CA",
-      "powertrain": "BEV",
-      "years": [
-        2020,
-        2026
-      ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-setchargelimit,charge-start,charge-stop,closure-doors,closure-enginecover,closure-islocked,closure-reartrunk,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
-      "classification": "MANAGED",
-      "caps": [
-        "charge-chargelimits",
-        "charge-detailedchargingstatus",
-        "charge-ischarging",
-        "charge-ischargingcableconnected",
-        "charge-setchargelimit",
-        "charge-start",
-        "charge-stop",
-        "closure-doors",
-        "closure-enginecover",
-        "closure-islocked",
-        "closure-reartrunk",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
@@ -4239,7 +4179,7 @@
         2022,
         2026
       ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-lock,closure-reartrunk,closure-sunroof,closure-unlock,closure-windows,connectivitystatus-isasleep,diagnostics-brakefluid,diagnostics-oillife,diagnostics-tirepressure,diagnostics-washerfluid,hvac-cabintargettemperature,hvac-iscabinhvacactive,hvac-isfrontdefrosteractive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-lock,closure-reartrunk,closure-sunroof,closure-unlock,closure-windows,connectivitystatus-isasleep,diagnostics-brakefluid,diagnostics-oillife,diagnostics-tirepressure,diagnostics-washerfluid,hvac-cabintargettemperature,hvac-iscabinhvacactive,hvac-isfrontdefrosteractive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin",
       "classification": "MANAGED",
       "caps": [
         "charge-chargelimits",
@@ -4268,10 +4208,10 @@
         "hvac-isfrontdefrosteractive",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin"
       ]
@@ -4426,49 +4366,6 @@
         "vehicleidentification-vin"
       ]
     },
-    "land rover||discovery sport||ca||phev": {
-      "make": "Land Rover",
-      "model": "Discovery Sport",
-      "region": "CA",
-      "powertrain": "PHEV",
-      "years": [
-        2025
-      ],
-      "sig": "charge-chargelimits,charge-chargerate,charge-detailedchargingstatus,charge-energyadded,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-sunroof,closure-windows,connectivitysoftware-currentfirmwareversion,diagnostics-airbag,diagnostics-brakefluid,diagnostics-oillife,diagnostics-telematics,diagnostics-tirepressure,diagnostics-washerfluid,hvac-iscabinhvacactive,internalcombustionengine-fuellevel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
-      "classification": "TRACKING",
-      "caps": [
-        "charge-chargelimits",
-        "charge-chargerate",
-        "charge-detailedchargingstatus",
-        "charge-energyadded",
-        "charge-ischarging",
-        "charge-ischargingcableconnected",
-        "charge-timetocomplete",
-        "closure-doors",
-        "closure-enginecover",
-        "closure-fronttrunk",
-        "closure-islocked",
-        "closure-reartrunk",
-        "closure-sunroof",
-        "closure-windows",
-        "connectivitysoftware-currentfirmwareversion",
-        "diagnostics-airbag",
-        "diagnostics-brakefluid",
-        "diagnostics-oillife",
-        "diagnostics-telematics",
-        "diagnostics-tirepressure",
-        "diagnostics-washerfluid",
-        "hvac-iscabinhvacactive",
-        "internalcombustionengine-fuellevel",
-        "location-preciselocation",
-        "odometer-traveleddistance",
-        "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
-        "tractionbattery-stateofcharge",
-        "vehicleidentification-vin",
-        "wheel-tires"
-      ]
-    },
     "land rover||discovery sport||us||phev": {
       "make": "Land Rover",
       "model": "Discovery Sport",
@@ -4616,7 +4513,7 @@
         2022,
         2026
       ],
-      "sig": "charge-chargelimits,charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-start,charge-stop,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-sunroof,closure-windows,hvac-cabintargettemperature,hvac-isfrontdefrosteractive,hvac-isreardefrosteractive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,motion-currentspeed,odometer-traveleddistance,service-records,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-start,charge-stop,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-sunroof,closure-windows,hvac-cabintargettemperature,hvac-isfrontdefrosteractive,hvac-isreardefrosteractive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,motion-currentspeed,odometer-traveleddistance,service-records,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
         "charge-chargelimits",
@@ -4640,12 +4537,12 @@
         "hvac-isreardefrosteractive",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-range",
         "location-preciselocation",
         "motion-currentspeed",
         "odometer-traveleddistance",
         "service-records",
         "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -5099,7 +4996,7 @@
         2024,
         2026
       ],
-      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,closure-doors,closure-fronttrunk,closure-islocked,closure-lock,closure-reartrunk,closure-sunroof,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,odometer-traveleddistance,service-records,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,closure-doors,closure-fronttrunk,closure-islocked,closure-lock,closure-reartrunk,closure-sunroof,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,service-records,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
         "charge-detailedchargingstatus",
@@ -5117,11 +5014,11 @@
         "closure-windows",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "service-records",
         "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -5419,7 +5316,7 @@
         2018,
         2026
       ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-wattage,closure-doors,closure-enginecover,closure-fronttrunk,closure-lock,closure-reartrunk,closure-sunroof,closure-windows,connectivitystatus-isonline,diagnostics-brakefluid,diagnostics-washerfluid,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-oillife,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,surveillance-isenabled,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-wattage,closure-doors,closure-enginecover,closure-fronttrunk,closure-lock,closure-reartrunk,closure-sunroof,closure-windows,connectivitystatus-isonline,diagnostics-brakefluid,diagnostics-washerfluid,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-oillife,location-preciselocation,odometer-traveleddistance,surveillance-isenabled,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -5441,11 +5338,11 @@
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
         "internalcombustionengine-oillife",
-        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "surveillance-isenabled",
         "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -5611,7 +5508,7 @@
       "years": [
         2025
       ],
-      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-wattage,closure-doors,closure-enginecover,closure-fronttrunk,closure-reartrunk,closure-sunroof,closure-windows,connectivitystatus-isonline,diagnostics-brakefluid,diagnostics-washerfluid,internalcombustionengine-fuellevel,internalcombustionengine-oillife,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,surveillance-isenabled,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargelimits,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-wattage,closure-doors,closure-enginecover,closure-fronttrunk,closure-reartrunk,closure-sunroof,closure-windows,connectivitystatus-isonline,diagnostics-brakefluid,diagnostics-washerfluid,internalcombustionengine-fuellevel,internalcombustionengine-oillife,location-preciselocation,odometer-traveleddistance,surveillance-isenabled,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -5630,11 +5527,11 @@
         "diagnostics-washerfluid",
         "internalcombustionengine-fuellevel",
         "internalcombustionengine-oillife",
-        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "surveillance-isenabled",
         "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin",
         "wheel-tires"
@@ -6099,7 +5996,7 @@
         2017,
         2026
       ],
-      "sig": "charge-chargerate,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,closure-doors,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-windows,hvac-cabintargettemperature,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-oillife,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-exteriorcolor,vehicleidentification-vin,wheel-tires",
+      "sig": "charge-chargerate,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-start,charge-stop,closure-doors,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-windows,hvac-cabintargettemperature,hvac-iscabinhvacactive,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-oillife,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-exteriorcolor,vehicleidentification-vin,wheel-tires",
       "classification": "MANAGED",
       "caps": [
         "charge-chargerate",
@@ -6118,10 +6015,10 @@
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
         "internalcombustionengine-oillife",
-        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
+        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-exteriorcolor",
         "vehicleidentification-vin",
@@ -6313,7 +6210,7 @@
         2022,
         2026
       ],
-      "sig": "charge-amperage,charge-chargelimits,charge-chargetimers,charge-detailedchargingstatus,charge-energyadded,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-start,charge-stop,charge-timetocomplete,charge-wattage,climate-internaltemperature,closure-doors,closure-fronttrunk,closure-windows,hvac-cabintargettemperature,hvac-issteeringheateractive,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,transmission-drivemode,vehicleidentification-vin",
+      "sig": "charge-amperage,charge-chargelimits,charge-chargetimers,charge-detailedchargingstatus,charge-energyadded,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-setchargelimit,charge-start,charge-stop,charge-timetocomplete,charge-wattage,climate-internaltemperature,closure-doors,closure-fronttrunk,closure-windows,hvac-cabintargettemperature,hvac-issteeringheateractive,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,transmission-drivemode,vehicleidentification-vin",
       "classification": "MANAGED",
       "caps": [
         "charge-amperage",
@@ -6324,6 +6221,7 @@
         "charge-ischarging",
         "charge-ischargingcableconnected",
         "charge-ischargingportflapopen",
+        "charge-setchargelimit",
         "charge-start",
         "charge-stop",
         "charge-timetocomplete",
@@ -7321,14 +7219,16 @@
       "years": [
         2026
       ],
-      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-sunroof,closure-windows,hvac-cabintargettemperature,hvac-isfrontdefrosteractive,hvac-isreardefrosteractive,location-preciselocation,motion-currentspeed,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
-      "classification": "TRACKING",
+      "sig": "charge-chargetimers,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-ischargingportflapopen,charge-start,charge-stop,charge-timetocomplete,closure-doors,closure-enginecover,closure-fronttrunk,closure-islocked,closure-reartrunk,closure-sunroof,closure-windows,hvac-cabintargettemperature,hvac-isfrontdefrosteractive,hvac-isreardefrosteractive,location-preciselocation,motion-currentspeed,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin,wheel-tires",
+      "classification": "MANAGED",
       "caps": [
         "charge-chargetimers",
         "charge-detailedchargingstatus",
         "charge-ischarging",
         "charge-ischargingcableconnected",
         "charge-ischargingportflapopen",
+        "charge-start",
+        "charge-stop",
         "charge-timetocomplete",
         "closure-doors",
         "closure-enginecover",
@@ -8098,7 +7998,7 @@
         2021,
         2025
       ],
-      "sig": "charge-chargelimits,charge-chargetimers,charge-chargingconnectortype,charge-createdailyschedule,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,charge-wattage,closure-doors,closure-islocked,closure-lock,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
+      "sig": "charge-chargelimits,charge-chargetimers,charge-chargingconnectortype,charge-createdailyschedule,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,charge-wattage,closure-doors,closure-islocked,closure-lock,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -8117,10 +8017,10 @@
         "closure-windows",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin"
       ]
@@ -8413,7 +8313,7 @@
         2016,
         2026
       ],
-      "sig": "charge-chargelimits,charge-chargetimers,charge-chargingconnectortype,charge-createdailyschedule,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,charge-wattage,closure-doors,closure-islocked,closure-lock,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-range,tractionbattery-stateofcharge,vehicleidentification-vin",
+      "sig": "charge-chargelimits,charge-chargetimers,charge-chargingconnectortype,charge-createdailyschedule,charge-detailedchargingstatus,charge-ischarging,charge-ischargingcableconnected,charge-timetocomplete,charge-wattage,closure-doors,closure-islocked,closure-lock,closure-unlock,closure-windows,internalcombustionengine-amountremaining,internalcombustionengine-fuellevel,internalcombustionengine-range,location-preciselocation,odometer-traveleddistance,tractionbattery-nominalcapacity,tractionbattery-stateofcharge,vehicleidentification-vin",
       "classification": "TRACKING",
       "caps": [
         "charge-chargelimits",
@@ -8432,10 +8332,10 @@
         "closure-windows",
         "internalcombustionengine-amountremaining",
         "internalcombustionengine-fuellevel",
+        "internalcombustionengine-range",
         "location-preciselocation",
         "odometer-traveleddistance",
         "tractionbattery-nominalcapacity",
-        "tractionbattery-range",
         "tractionbattery-stateofcharge",
         "vehicleidentification-vin"
       ]
